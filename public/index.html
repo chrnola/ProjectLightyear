@@ -1,0 +1,22 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>Socket.IO test!</title>
+		<!--- Does this really just serve it magically to the client from node?!?!? -->
+		<script src="/socket.io/socket.io.js"></script>
+		<script>
+			var socket = io.connect('http://localhost');
+			socket.on('news', function (data) {
+				console.log(data);
+				document.getElementById('msg').innerText = data.hello;
+				socket.emit('my other event', {my: 'data'});
+			});
+		</script>
+	</head>
+	
+	<body>
+		<h1>Hello</h1>
+		<p id="msg">
+		</p>
+	</body>
+</html>
