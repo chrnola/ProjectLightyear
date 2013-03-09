@@ -1,6 +1,7 @@
 var app = require('express')()
 	,server = require('http').createServer(app)
-	,io = require('socket.io').listen(server);
+	,io = require('socket.io').listen(server)
+	,gpio = require('pi-gpio');
 	
 server.listen(80);
 
