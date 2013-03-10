@@ -1,17 +1,21 @@
 <!DOCTYPE>
 <html>
 	<head>
+		<meta charset="utf-8">
 		<title>Project Lightyear</title>
-		<!--- Magically serve the client-side Socket.IO script -->
-		<script src="/socket.io/socket.io.js"></script>
-		
-		<!-- Load up jQuery and my own scripts -->
-		<script src="/js/jquery-1.9.1.min.js"></script>
-		<script src="/js/lightyear.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		
 		<!-- Load Twitter's Bootstrap -->
-		<script src="/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+		
+		<!-- Load Flat UI Extension -->
+		<link rel="stylesheet" href="/css/flat-ui.css">
+		<link rel="shortcut icon" href="/images/favicon.ico">
+		
+		<!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+		<!--[if lt IE 9]>
+			<script src="js/html5shiv.js"></script>
+		<![endif]-->
 	</head>
 	
 	<body>
@@ -24,7 +28,23 @@
 		</section>
 		
 		<footer>
+			<span>Built with <a href="http://designmodo.com">Flat UI</a></span>
 			<span>Project Lightyear, &copy; 2013</span>
 		</footer>
+		
+		<!-- Load all scripts -->
+		<!--- Magically serve the client-side Socket.IO script -->
+		<script src="/socket.io/socket.io.js"></script>
+		<!-- Load up jQuery, Flat UI scripts, and my own script -->
+		<script src="js/jquery-1.8.2.min.js"></script>
+		<script src="js/jquery-ui-1.10.0.custom.min.js"></script>
+		<script src="js/jquery.dropkick-1.0.0.js"></script>
+		<script src="js/custom_checkbox_and_radio.js"></script>
+		<script src="js/custom_radio.js"></script>
+		<script src="js/jquery.tagsinput.js"></script>
+		<script src="js/bootstrap-tooltip.js"></script>
+		<script src="js/jquery.placeholder.js"></script>
+		<script src="js/application.js"></script>
+		<script src="/js/lightyear.js"></script>
 	</body>
 </html>
