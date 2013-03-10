@@ -1,8 +1,11 @@
-var app = require('express')()
-	,server = require('http').createServer(app)
-	,io = require('socket.io').listen(server)
-	,gpio = require('pi-gpio');
+var express = require('express')
+	, app = express()
+	, server = require('http').createServer(app)
+	, io = require('socket.io').listen(server)
+	, gpio = require('pi-gpio');
 	
+app.use(express.static(__dirname + '/public'));
+
 server.listen(80);
 
 app.get('/', function (req, res) {
@@ -10,8 +13,13 @@ app.get('/', function (req, res) {
 });
 
 io.sockets.on('connection', function (socket) {
-	socket.emit('news', { hello: 'world' });
-	socket.on('my other event', function (data) {
-		console.log(data);
+	console.log("Greeting client...");
+	
+	socket.emit('connect', { msg: 'hello, client!' }, function (data){
+		console.log("Client ACK'd connection!");
+	});
+	
+	socket.on('button', function (data) {
+		console.log('client hit button!!!! ' + data.msg);
 	});
 });

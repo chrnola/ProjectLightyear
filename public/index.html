@@ -1,22 +1,30 @@
 <!DOCTYPE>
 <html>
 	<head>
-		<title>Socket.IO test!</title>
-		<!--- Does this really just serve it magically to the client from node?!?!? -->
+		<title>Project Lightyear</title>
+		<!--- Magically serve the client-side Socket.IO script -->
 		<script src="/socket.io/socket.io.js"></script>
-		<script>
-			var socket = io.connect('http://localhost');
-			socket.on('news', function (data) {
-				console.log(data);
-				document.getElementById('msg').innerText = data.hello;
-				socket.emit('my other event', {my: 'data'});
-			});
-		</script>
+		
+		<!-- Load up jQuery and my own scripts -->
+		<script src="/js/jquery-1.9.1.min.js"></script>
+		<script src="/js/lightyear.js"></script>
+		
+		<!-- Load Twitter's Bootstrap -->
+		<script src="/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
 	</head>
 	
 	<body>
-		<h1>Hello</h1>
-		<p id="msg">
-		</p>
+		<header>
+			<h1>Project Lightyear</h1>
+		</header>
+		
+		<section id="main">
+			<button id="openDoor">Hold to buzzzzzz</button>
+		</section>
+		
+		<footer>
+			<span>Project Lightyear, &copy; 2013</span>
+		</footer>
 	</body>
 </html>
