@@ -13,13 +13,11 @@ Installation
 
 From a fresh install of [Raspbian on your Pi, you'll first need to install [node.js] and [npm], the node package manager.
 
-```sudo apt-get install nodejs npm
-```
+```sudo apt-get install nodejs npm```
 
 Type in your password ("raspberry" by default) and wait a few. Next we're going to install [gpio-admin] so that we don't need to run our web server as root to be able to manipulate the Pi's [GPIO] pins. We'll use [Git] to get the latest version, so we'll have to install that real quick.
 
-```sudo apt-get install git
-```
+```sudo apt-get install git```
 
 Now we can proceed to install [gpio-admin].
 
@@ -30,31 +28,26 @@ git clone git://github.com/quick2wire/quick2wire-gpio-admin.git
 cd quick2wire-gpio-admin
 make
 sudo make install
-sudo adduser $USER gpio
-```
+sudo adduser $USER gpio```
 
 
 This will create a separate gpio user group on your Pi that [gpio-admin] will use to determine who is allowed to access the GPIO pins. In order for this new group to take effect, you'll have to restart your session...or you could just reboot the Pi. ;)
 
-```sudo reboot
-```
+```sudo reboot```
 
 Once your Pi comes back up, you can finally download the Project Lightyear source!
 
 ```cd ~/projects
 git clone git://github.com/chrnola/ProjectLightyear.git
-cd ProjectLightyear
-```
+cd ProjectLightyear```
 
 Being that this project is bundled with a packages.json file, [npm] can use this to automatically download and install all the dependencies for you.
 
-```npm install
-```
+```npm install```
 
 Once those are all installed, you can start the server.
 
-```nodejs server.js
-```
+```nodejs server.js```
 
 By default, the server will be running on port 80, so pop open a web browser and type in your Pi's IP address or hostname to see it.
 
@@ -64,8 +57,7 @@ To download newer versions of the code, you can simply do the following to avoid
 
 ```cd ~/projects/ProjectLightyear
 git update origin
-npm install
-```
+npm install```
 
 I'll be documenting the physical circuit used to interface with the Airphone unit once it's actually been made. :-p
 
