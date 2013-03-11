@@ -1,4 +1,4 @@
-Project Lightyear
+Project Lightyear1
 =========
 
 A simple web server designed to be run on a [Raspberry Pi] in order to interface with an [Airphone Master Station C-ML] locally and/or over the Internet.
@@ -21,14 +21,15 @@ Type in your password ("raspberry" by default) and wait a few. Next we're going 
 
 Now we can proceed to install [gpio-admin].
 
-```cd ~
-mkdir projects
-cd projects
-git clone git://github.com/quick2wire/quick2wire-gpio-admin.git
-cd quick2wire-gpio-admin
-make
-sudo make install
-sudo adduser $USER gpio```
+```cd ~```
+```mkdir projects```
+```cd projects```
+```git clone git://github.com/quick2wire/quick2wire-gpio-admin.git```
+```cd quick2wire-gpio-admin```
+```make```
+```sudo make install```
+```sudo adduser $USER gpio```
+
 
 This will create a separate gpio user group on your Pi that [gpio-admin] will use to determine who is allowed to access the GPIO pins. In order for this new group to take effect, you'll have to restart your session...or you could just reboot the Pi. ;)
 
@@ -36,9 +37,9 @@ This will create a separate gpio user group on your Pi that [gpio-admin] will us
 
 Once your Pi comes back up, you can finally download the Project Lightyear source!
 
-```cd ~/projects
-git clone git://github.com/chrnola/ProjectLightyear.git
-cd ProjectLightyear```
+```cd ~/projects```
+```git clone git://github.com/chrnola/ProjectLightyear.git```
+```cd ProjectLightyear```
 
 Being that this project is bundled with a packages.json file, [npm] can use this to automatically download and install all the dependencies for you.
 
@@ -52,12 +53,11 @@ By default, the server will be running on port 80, so pop open a web browser and
 
 *Note: I will eventually be requiring SSL before deploying this in production...especially if it will be used over the Internet.*
 
-
 To download newer versions of the code, you can simply do the following to avoid having to re-download the whole thing.
 
-```cd ~/projects/ProjectLightyear
-git update origin
-npm install```
+```cd ~/projects/ProjectLightyear```
+```git update origin```
+```npm install```
 
 I'll be documenting the physical circuit used to interface with the Airphone unit once it's actually been made. :-p
 
